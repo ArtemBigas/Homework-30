@@ -26,7 +26,7 @@ void OptimizedThreadPool::stop() {//для остановки потоков
 void OptimizedThreadPool::push_task(FuncType func, std::vector<int>& vec, int a, int b) {
     // вычисляем индекс очереди, куда положим задачу
     int queue_to_push = m_qindex++ % m_thread_count;
-    task_type new_task([=] {func(vec, a, b); });//создается функтор с заданной функцией, переданной через лямду
+    task_type new_task([&vec, a, b, func] {func(vec, a, b); });//создается функтор с заданной функцией, переданной через лямду
     m_thread_queues[queue_to_push].push(new_task);//new_task кладется в очередь,последняя хранится в классе(private)
 };
 
