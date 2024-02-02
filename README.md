@@ -1,5 +1,16 @@
 # Homework-30
-Быстрая сортировка с использованием пулов потоков
+
+English:Quick sort using thread pools
+
+The main idea: take a quick sort function, without singularity, and place tasks in the main thread.
+
+An array is created and divided into equal parts R in the amount M, which is also the number of tasks. Each matrix array is put through sorting, after which the main one collects everything into a heap.
+
+There are several comments inside the code to test each matrix array
+
+Homework-30 - vector. The same thing, but an array of vector type is used.
+
+Русский:Быстрая сортировка с использованием пулов потоков
 
 Основная идея: взять функцию быстрой сортировки, без сингулярности, а задачи ставить в главном потоке. 
 
